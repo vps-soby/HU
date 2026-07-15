@@ -1,3 +1,4 @@
-FROM teddysun/xray:latest
-COPY config.json /etc/xray/config.json
-CMD ["xray", "-c", "/etc/xray/config.json"]
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
